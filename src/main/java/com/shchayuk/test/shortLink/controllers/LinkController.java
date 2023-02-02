@@ -2,7 +2,7 @@ package com.shchayuk.test.shortLink.controllers;
 
 import com.shchayuk.test.shortLink.dto.LinkDTO;
 import com.shchayuk.test.shortLink.models.Link;
-import com.shchayuk.test.shortLink.services.LinkService;
+import com.shchayuk.test.shortLink.services.Impl.LinkServiceDefaultImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +17,10 @@ import java.util.Map;
 public class LinkController {
 
     private final ModelMapper modelMapper;
-    private final LinkService linkService;
+    private final LinkServiceDefaultImpl linkService;
 
     @Autowired
-    public LinkController(ModelMapper modelMapper, LinkService linkService) {
+    public LinkController(ModelMapper modelMapper, LinkServiceDefaultImpl linkService) {
         this.modelMapper = modelMapper;
         this.linkService = linkService;
     }

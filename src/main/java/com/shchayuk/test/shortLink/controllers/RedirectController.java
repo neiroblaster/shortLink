@@ -1,6 +1,6 @@
 package com.shchayuk.test.shortLink.controllers;
 
-import com.shchayuk.test.shortLink.services.LinkService;
+import com.shchayuk.test.shortLink.services.Impl.LinkServiceDefaultImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +11,10 @@ import org.springframework.web.servlet.view.RedirectView;
 @RestController
 public class RedirectController {
 
-    private final LinkService linkService;
+    private final LinkServiceDefaultImpl linkService;
 
     @Autowired
-    public RedirectController(LinkService linkService) {
+    public RedirectController(LinkServiceDefaultImpl linkService) {
         this.linkService = linkService;
     }
 
