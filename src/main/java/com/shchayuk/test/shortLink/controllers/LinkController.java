@@ -3,6 +3,7 @@ package com.shchayuk.test.shortLink.controllers;
 import com.shchayuk.test.shortLink.dto.LinkDTO;
 import com.shchayuk.test.shortLink.models.Link;
 import com.shchayuk.test.shortLink.services.Impl.LinkServiceDefaultImpl;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,18 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
+@RequiredArgsConstructor
 @RestController
 public class LinkController {
 
     private final ModelMapper modelMapper;
+
     private final LinkServiceDefaultImpl linkService;
-
-    @Autowired
-    public LinkController(ModelMapper modelMapper, LinkServiceDefaultImpl linkService) {
-        this.modelMapper = modelMapper;
-        this.linkService = linkService;
-    }
-
 
     @PostMapping("/generate")
     public ResponseEntity <?> getShortLink(@RequestBody LinkDTO linkDTO){
